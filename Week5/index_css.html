@@ -1,0 +1,86 @@
+<!-- CSS: cascading style sheets
+ -> css rules apply from generic to specific html elemments
+ html > body > section > p > b
+
+ -> css rile to the b
+Types of CSS:
+    1. Inline css -> adding css as an attribute to an html 
+        element
+    
+    2. internal (embedded css)
+        -> add all css rules inside a <style> element
+            and put that in the head
+        -> when you want to change something
+            on a single page 
+        
+    3. external css
+        -> create a stand alone css file and add it
+        using <link> element put that in the head
+        <link href="style_file.css" rel="stylesheet">
+        -> when you have more than one page
+        
+        parts of css:
+            . selector: what we use to identify the html element 
+            . declaration: the actual rule, property followed by
+            the value and a ;
+            .  declaration block: all the rules for a single selector
+    Tips:
+    - use class for styling 
+    - use id for unique hooks 
+
+    Display property
+            -> block - elements take up the full width, start on a new line
+            -> inline - elements take as little space as possible
+                and sit in line with other in line elements
+            -> flex - turns the element into a flexbox
+                - behaves like a block on the outside 
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="all_css.css" rel="stylesheet"
+        <style>
+
+        </style>
+
+
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <a class="nav-btn disabled" href="#">Home</a>
+                <a class="nav-btn" href="about.html">About Us</a>
+                <a class="nav-btn" href="#">Products</a>
+                <a class="nav-btn" href="#">Contact Us</a>
+            </nav>
+        </header>
+
+        <main>
+            <p>
+                This is a 
+                <u style="color:red;">
+                paragraph
+                </u>
+            </p>
+
+            <section>
+                <p class="colors" id="red">Red</p>
+                <p class="colors" id="green">Green</p>
+                <p class="colors" id="blue">Blue</p>
+            </section>
+
+            <p>p1</p>
+            <p>p2</p>
+
+            <div class="colors">this is a divison</div>
+        </main>
+        <footer>
+            &copy; 2026 - MIS 481 - In Class Practice File
+        </footer>
+
+    </body>
+</html>

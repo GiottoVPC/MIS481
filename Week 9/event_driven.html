@@ -1,0 +1,100 @@
+<!-- 
+ event -> any event that can be detected by browser
+ usually user installed
+ can also be system triggered 
+
+ what happended, where and which element
+
+ eventHandler (eventListener)
+
+ element.addEventListender("eventType", function(event) {
+    // code that runs when event happens 
+ });
+
+ 1. anonymous function -> has no name 
+ 2. named function 
+
+ -->
+
+<DOCTYPE html>
+<html>
+   <head>
+        <style>
+            body {
+                border: 3px solid black;
+                height: 90vh;
+                background-color: yellow;
+            }
+        </style>
+
+   </head>
+
+   <body>
+        <p>Paragraph 1</p>
+        <div>This is a div</div>
+        
+        <input type="number" id="farenheit"><label>°F</label>
+        <input type="number" id="celsius"><label>°C</label><br>
+
+        <input type="number" id="pounds"><label>lbs</label>
+        <input type="number" id="kilograms"><label>kg</label><br>
+
+        <input type="number" id="meters"><label>m</label>
+        <input type="number" id="feet"><label>ft</label>
+
+        <script>
+            const body = document.querySelector("body");
+            //body.addEventListener("click", function(event) {
+            //    console.log("User Click Recieved!");
+            //    console.log(event.target);
+            //    console.log(event.pagex), 
+            //});
+
+            function findCoordinates(event) {
+                console.log(event.pageX, event.pageY);
+            }
+            body.addEventListener("click", findCoordinates);
+
+            const farenheit = document.getElementById("farenheit");
+            const celsius = document.getElementById("celsius");
+            const pounds = document.getElementById("pounds");
+            const kilograms = document.getElementById("kilograms");
+            const meters = document.getElementById("meters");
+            const feet = document.getElementById("feet");
+
+            // for inputs the inner content is 'value'
+            // for other elements like <span> or <div> -> innerText
+            farenheit.addEventListener("input", function(event) {
+                let convert = (Number(farenheit.value) - 32) * 5 / 9;
+                celsius.value = convert.toFixed(2);
+            });
+
+            celsius.addEventListener("input", function(event) {
+                let convert = (Number(celsius.value) * 9 / 5) +32;
+                farenheit.value = convert.toFixed(2);
+            });
+
+            pounds.addEventListener("input", function(event) {
+                let convert = Number(pounds.value) * 0.453592;
+                kilograms.value = convert.toFixed(2);
+            });
+
+            kilograms.addEventListener("input", function(event) {
+                let convert = Number(kilograms.value) / 0.453592;
+                pounds.value = convert.toFixed(2);
+            });
+
+            meters.addEventListener("input", function(event) {
+                let convert = Number(meters.value) * 3.28084;
+                feet.value = convert.toFixed(2);
+            });
+
+            feet.addEventListener("input", function(event) {
+                let convert = Number(feet.value) / 3.28084;
+                meters.value = convert.toFixed(2);
+            });
+
+        </script>
+   
+    </body>
+</html>

@@ -1,0 +1,42 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Form</title>
+    </head>
+
+    <body>
+        <form method="get" action="#">
+            <fieldset>
+                <label>Title:</label>
+                <label>Mr.</label><input type="radio" name="title">
+                <label for="mrs">Mrs.</label><input type="radio" name="title" id="mrs">
+                <label>Ms.</label><input type="radio" name="title">
+                <label>Mx.</label><input type="radio" name="title">
+                <br>
+                <label for="fname">First Name:</label><input type="text" 
+                required id="fname">
+                <br>
+                <label>Last Name:</label><input type="text">
+                <br>
+                <label>Date of Birth:</label><input type="date">
+                <br>
+                <label>Number of Children:<label><input type="number"
+                min="0" value="0">
+            </fieldset>
+    
+            <fieldset>
+                    <legend>Contact Details</legend>
+            <label>Phone Number:</label><input type="tel">
+            <br>
+            <label>Email:</label><input type="email">
+            <br>
+            </fieldset>
+            <input type="submit">
+            <input type="reset">
+        </form>
+    </body>
+</html>

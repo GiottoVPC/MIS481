@@ -1,0 +1,68 @@
+<!-- 
+ fudmenentals
+ data types
+ conditonals (if and else statements)
+ loops (for and while)
+ functions
+
+ JS in the browser
+1. inline JS -> use an event attribute inside an html element
+    good: quick testing and debugging tool and useful for simple interactions 
+    bad: mixing JS with HTML, it can get messy when we haev a lot of code
+
+2. internal JS -> write the code inside <script>
+    good: small websties, simple scripts
+    bad: optimizing can be dificult for large projects 
+
+3. external JS -> write in a seperate file and link to HTML
+    Placement: <script src="script.js" defer> in thr head of html
+    
+    defer vs async
+    - defer: JS file downloads but browser would wait for html content
+    - async: two fles run independently -> analytics js code
+    
+    good: use for large prjects, run same code on multiplle pages
+
+    Document Object Model (DOM):
+    html > body > section > articles > p > a > img
+
+    - DOM is a heirarchyical data structure that represents the content
+    - used to find and manipulate HTML elements 
+
+    - Manipulating DOM
+        - document.querySelector() -> css selector (returns 1st element)
+        - doucment.querySelectorAll() -> (returns all in an array)
+        - document.getElementById() -> unique elements
+        - document.getElementByClassName() -> an array
+        - document.getElementsByTagName() -> array
+    
+    Window Object -> work with anything in the browser window
+    window.altert();
+    window.open();
+-->
+
+<!DOCTYPE html>
+    <head>
+
+    </head>
+   
+    <body>
+        <button onclick="altert('Welcome!');">Click Me</button>
+
+        <div>
+            Change ths content 
+        </div>
+        <div>
+            Here is some text
+        </div>
+        <script>
+            //window.alert("Welcome to my website");
+            //open("https://google.come");
+            const textVar = document.querySelector("div");
+            console.log(textVar.innerText);
+            textVar.innerText  = "Hello User";
+            console.log(textVar.innerText);
+            console.log(window.doumcnet === doumcnet);
+        </script>
+    </body>
+</html>
